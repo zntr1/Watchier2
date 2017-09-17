@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,9 @@ namespace Watchier
         private Point lastLocation;
 
         private static User user;
+
+        public static string localImagePath = Application.StartupPath + "\\Images\\";
+       
 
         internal static User User
         {
@@ -67,7 +71,7 @@ namespace Watchier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userWindow1.BringToFront();
+            //userWindow1.BringToFront();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -77,9 +81,22 @@ namespace Watchier
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Check Image Directory
+            try
+            {
+                if (!Directory.Exists(localImagePath))
+                {
+                    Directory.CreateDirectory(localImagePath);
+                }
+            }
+            catch (Exception exception){
+                Console.WriteLine(exception);
+                throw;
+            }
+          
             var loginForm = new LoginForm();
             loginForm.ShowDialog();
-            label_username.Text = "Hallo " + user.name;
+            label_username.Text = "Welcome, " + user.name;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -94,7 +111,7 @@ namespace Watchier
 
         private void button_list_Click(object sender, EventArgs e)
         {
-            listWindow1.BringToFront();
+            //listWindow1.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -110,6 +127,21 @@ namespace Watchier
         private void userWindow1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchView1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picturebox_header_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

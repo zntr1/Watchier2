@@ -14,9 +14,6 @@ namespace Watchier
     public partial class userWindow : UserControl
     {
 
-        public static string settingsPath = @"C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier\Watchier\Settings\";
-        public static string loadedUsername;
-
         public userWindow()
         {
             InitializeComponent();
@@ -24,18 +21,11 @@ namespace Watchier
 
         private void button_check_Click(object sender, EventArgs e)
         {
-            string username = textbox_username.Text;
-            if (checkUsername(username))
-            {
-                textbox_status.Text = "Settings found. Loading...";
-            } else
-            {
-                textbox_status.Text = "Settings not found. Creating new...";
-            }
-            
+        
 
         }
 
+        /*
         private bool checkUsername(string username)
         {
             string user = username;
@@ -68,5 +58,6 @@ namespace Watchier
                 }
             }
         }
+        */
     }
 }

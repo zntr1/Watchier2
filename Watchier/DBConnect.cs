@@ -17,13 +17,11 @@ namespace Watchier
 
         public MySqlConnection Connection
         {
-            get
-            {
+            get {
                 return connection;
             }
 
-            set
-            {
+            set {
                 connection = value;
             }
         }
@@ -37,10 +35,10 @@ namespace Watchier
         //Initialize values
         private void Initialize()
         {
-            server = "127.0.0.1";
-            database = "watchierdb";
-            uid = "root";
-            password = "0000";
+            server = "sql11.freemysqlhosting.net";
+            database = "sql11194737";
+            uid = "sql11194737";
+            password = "cbzZKIaeaB";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -55,8 +53,7 @@ namespace Watchier
             {
                 Connection.Open();
                 return true;
-            }
-            catch (MySqlException ex)
+            } catch (MySqlException ex)
             {
                 //When handling errors, you can your application's response based 
                 //on the error number.
@@ -85,8 +82,7 @@ namespace Watchier
             {
                 Connection.Close();
                 return true;
-            }
-            catch (MySqlException ex)
+            } catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
                 return false;
@@ -109,7 +105,7 @@ namespace Watchier
         public void Insert(string username, string email, byte[] salt, byte[] hash)
         {
             //string saltStr = string.Join(" ", salt.Select(x => x.ToString()).ToList());
-            string query = "INSERT INTO users (name, email, salt, passwordhash) VALUES(@username, @email, @bytesalt, @bytehash)";
+            string query = "INSERT INTO users (username, email, salt, hash) VALUES(@username, @email, @bytesalt, @bytehash)";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -130,8 +126,7 @@ namespace Watchier
                     //close connection
                     this.CloseConnection();
 
-                }
-                catch (MySqlException ex)
+                } catch (MySqlException ex)
                 {
                     int errorcode = ex.Number;
                     Console.WriteLine("Error:" + ex.Message + errorcode.ToString());
@@ -144,7 +139,7 @@ namespace Watchier
         //Update statement
         public void Update()
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE username='John Smith'";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -180,7 +175,7 @@ namespace Watchier
         //Select statement Select Everything
         public List<string>[] Select()
         {
-            string query = "SELECT * FROM watchierdb.users";
+            string query = "SELECT * FROM sql11194737.users";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -200,7 +195,7 @@ namespace Watchier
                 while (dataReader.Read())
                 {
                     list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
+                    list[1].Add(dataReader["username"] + "");
                     list[2].Add(dataReader["password"] + "");
                 }
 
@@ -212,8 +207,7 @@ namespace Watchier
 
                 //return list to be displayed
                 return list;
-            }
-            else
+            } else
             {
                 return list;
             }
@@ -222,7 +216,7 @@ namespace Watchier
         //Select statement Select Everything
         public List<string> SelectRow(string username)
         {
-            string query = "SELECT * FROM watchierdb.users WHERE name=@name";
+            string query = "SELECT * FROM sql11194737.users WHERE username=@name";
 
             //Create a list to store the result
             List<string> list = new List<string>();
@@ -243,7 +237,7 @@ namespace Watchier
 
                     //Read the data and store them in the list, ignore salt and Hash
                     list.Add(dataReader["id"] + "");
-                    list.Add(dataReader["name"] + "");
+                    list.Add(dataReader["username"] + "");
                     list.Add(dataReader["email"] + "");
 
                     //close Data Reader
@@ -254,13 +248,11 @@ namespace Watchier
 
                     //return list to be displayed
                     return list;
-                }
-                else
+                } else
                 {
                     return list;
                 }
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine("Error in SelectRow:" + ex);
                 throw;
@@ -288,8 +280,7 @@ namespace Watchier
                 this.CloseConnection();
 
                 return Count;
-            }
-            else
+            } else
             {
                 return Count;
             }
@@ -298,7 +289,7 @@ namespace Watchier
         //Select Hash and Salt statement
         public List<byte[]> SelectSaltAndHash(string username)
         {
-            string query = "SELECT salt, passwordhash FROM watchierdb.users WHERE name=@name";
+            string query = "SELECT salt, hash FROM sql11194737.users WHERE username=@name";
 
             //Create a list to store the result
             List<byte[]> list = new List<byte[]>();
@@ -316,7 +307,7 @@ namespace Watchier
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     dataReader.Read();
                     byte[] salt = (byte[])dataReader["salt"];
-                    byte[] hash = (byte[])dataReader["passwordhash"];
+                    byte[] hash = (byte[])dataReader["hash"];
                     //close Data Reader
                     dataReader.Close();
 
@@ -328,14 +319,12 @@ namespace Watchier
                     //return list to be displayed
                     return list;
 
-                }
-                catch (Exception ex)
+                } catch (Exception ex)
                 {
                     Console.WriteLine("Error in SelectSaltAndHash:" + ex);
                     throw;
                 }
-            }
-            else
+            } else
             {
                 return list;
             }
@@ -344,7 +333,7 @@ namespace Watchier
         //Select Hash and Salt statement
         public bool UserExists(string username)
         {
-            string query = "SELECT name FROM watchierdb.users WHERE BINARY name=@name"; // Binary für exaktes Match auf Binärer ebene.
+            string query = "SELECT username FROM sql11194737.users WHERE BINARY username=@name"; // Binary für exaktes Match auf Binärer ebene.
             bool userExists = false;
 
             //Open connection
@@ -369,10 +358,47 @@ namespace Watchier
                     this.CloseConnection();
                     return userExists;
 
-                }
-                catch (Exception ex)
+                } catch (Exception ex)
                 {
                     Console.WriteLine("Error in UserExists:" + ex);
+                    throw;
+                }
+            }
+            return userExists;
+
+        }
+
+        public bool EmailExists(string email)
+        {
+            string query = "SELECT username FROM sql11194737.users WHERE BINARY email=@email"; // Binary für exaktes Match auf Binärer ebene.
+            bool userExists = false;
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    //Create Command
+                    MySqlCommand cmd = new MySqlCommand(query, Connection);
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+
+                    //Create a data reader and Execute the command
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        userExists = true;
+                    }
+                    //close Data Reader
+                    dataReader.Close();
+
+                    //close Connection
+                    this.CloseConnection();
+                    Console.WriteLine(userExists);
+                    return userExists;
+
+                } catch (Exception ex)
+                {
+                    Console.WriteLine("Error in EmailExists:" + ex);
                     throw;
                 }
             }

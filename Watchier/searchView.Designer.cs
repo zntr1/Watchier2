@@ -89,10 +89,10 @@
             this.picturebox_search.Dock = System.Windows.Forms.DockStyle.Right;
             this.picturebox_search.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_search.Image")));
             this.picturebox_search.InitialImage = ((System.Drawing.Image)(resources.GetObject("picturebox_search.InitialImage")));
-            this.picturebox_search.Location = new System.Drawing.Point(390, 0);
+            this.picturebox_search.Location = new System.Drawing.Point(587, 0);
             this.picturebox_search.Margin = new System.Windows.Forms.Padding(0);
             this.picturebox_search.Name = "picturebox_search";
-            this.picturebox_search.Size = new System.Drawing.Size(256, 360);
+            this.picturebox_search.Size = new System.Drawing.Size(312, 507);
             this.picturebox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picturebox_search.TabIndex = 3;
             this.picturebox_search.TabStop = false;
@@ -175,9 +175,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 53);
+            this.panel1.Location = new System.Drawing.Point(0, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 307);
+            this.panel1.Size = new System.Drawing.Size(587, 438);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -185,7 +185,7 @@
             // 
             this.label_rateNow.AutoSize = true;
             this.label_rateNow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_rateNow.Location = new System.Drawing.Point(103, 88);
+            this.label_rateNow.Location = new System.Drawing.Point(366, 88);
             this.label_rateNow.Name = "label_rateNow";
             this.label_rateNow.Size = new System.Drawing.Size(59, 13);
             this.label_rateNow.TabIndex = 15;
@@ -284,7 +284,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 63);
+            this.panel2.Size = new System.Drawing.Size(587, 63);
             this.panel2.TabIndex = 10;
             // 
             // notifyIcon1
@@ -301,12 +301,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picturebox_search);
             this.Name = "searchView";
-            this.Size = new System.Drawing.Size(646, 360);
+            this.Size = new System.Drawing.Size(899, 507);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_search)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

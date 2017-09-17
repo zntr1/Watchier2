@@ -233,8 +233,13 @@ namespace Watchier
             textbox_desc.Text = description;
 
             // PreviewFoto C:\Users\secto\Source\Repos\MediaWatch2\MediaWatch-master\Serienlook
-            string localImagePath = @"C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier\Watchier\Images\" + name+ ".png";
+            string localPath = Application.StartupPath; 
+            string localImagePath = (localPath+"\\Images\\" + name+ ".png");
             string posterPathUrl = @"https://image.tmdb.org/t/p/w500/" + imagePath;
+
+            if (!Directory.Exists(localPath + "\\Images\\")){
+                Directory.CreateDirectory(localPath + "\\Images\\");
+            }
 
             // If File does not Exist, download. Else, skip!
             if (!File.Exists(localImagePath))
@@ -280,26 +285,27 @@ namespace Watchier
             int selectedIndex = combobox_search.SelectedIndex;
 
             Result result = ResultList[selectedIndex];
-            int id = result.resultId;
-            string name = result.resultName;
-            int votes = result.resultVotes;
-            string rating = result.resultRating.ToString().Insert(1, "."); // add a dot because parse removes it!
-            string description = result.resultDescription;
-            string imagePath = result.resultPosterPath;
+            int resultId = result.resultId;
+            string resultName = result.resultName;
+            int resultVotes = result.resultVotes;
+            string resultRating = result.resultRating.ToString().Insert(1, "."); // add a dot because parse removes it!
+            string resultDescription = result.resultDescription;
+            string resultImagePath = result.resultPosterPath;
 
-            string user = userWindow.loadedUsername == null ? "not logged in": userWindow.loadedUsername;
+            User user = Form1.User;
+            int userId = user.id;
+            string userName = user.name;
+            string userEmail = user.email;
+            string userImagePath = Form1.localImagePath;
 
-            string userSettingsPath = (userWindow.settingsPath + user + ".txt");
-            if (!File.Exists(userSettingsPath))
-            {
+            DBConnect dbservice = new DBConnect();
+
+            // Hier weitermachen DB Connection umändern damit entries table accessible wird!
+            //dbservice.Insert();
 
 
-            }
-            else
-            {
 
-            }
-           
+
         }
     }
 }
