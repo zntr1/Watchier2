@@ -36,6 +36,7 @@
             this.button_logo = new System.Windows.Forms.Button();
             this.button_user = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
+            this.label_logout = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.searchView1 = new Watchier.searchView();
             this.userWindow1 = new Watchier.userWindow();
             this.listWindow1 = new Watchier.listWindow();
-            this.label_logout = new System.Windows.Forms.LinkLabel();
             this.panel_side.SuspendLayout();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).BeginInit();
@@ -78,6 +78,7 @@
             this.button_settings.Name = "button_settings";
             this.button_settings.Size = new System.Drawing.Size(97, 89);
             this.button_settings.TabIndex = 4;
+            this.button_settings.TabStop = false;
             this.button_settings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_settings.UseVisualStyleBackColor = false;
             // 
@@ -93,6 +94,7 @@
             this.button_list.Name = "button_list";
             this.button_list.Size = new System.Drawing.Size(97, 88);
             this.button_list.TabIndex = 3;
+            this.button_list.TabStop = false;
             this.button_list.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_list.UseVisualStyleBackColor = true;
             this.button_list.Click += new System.EventHandler(this.button_list_Click);
@@ -109,6 +111,7 @@
             this.button_search.Name = "button_search";
             this.button_search.Size = new System.Drawing.Size(97, 88);
             this.button_search.TabIndex = 2;
+            this.button_search.TabStop = false;
             this.button_search.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_search.UseVisualStyleBackColor = true;
             this.button_search.Click += new System.EventHandler(this.button_search_Click);
@@ -123,6 +126,7 @@
             this.button_logo.Name = "button_logo";
             this.button_logo.Size = new System.Drawing.Size(97, 88);
             this.button_logo.TabIndex = 1;
+            this.button_logo.TabStop = false;
             this.button_logo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_logo.UseVisualStyleBackColor = true;
             // 
@@ -138,6 +142,7 @@
             this.button_user.Name = "button_user";
             this.button_user.Size = new System.Drawing.Size(97, 88);
             this.button_user.TabIndex = 0;
+            this.button_user.TabStop = false;
             this.button_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_user.UseVisualStyleBackColor = true;
             this.button_user.Click += new System.EventHandler(this.button1_Click);
@@ -160,6 +165,19 @@
             this.panel_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_header_MouseMove);
             this.panel_header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_header_MouseUp);
             // 
+            // label_logout
+            // 
+            this.label_logout.AutoSize = true;
+            this.label_logout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label_logout.Location = new System.Drawing.Point(815, 9);
+            this.label_logout.Name = "label_logout";
+            this.label_logout.Size = new System.Drawing.Size(50, 13);
+            this.label_logout.TabIndex = 6;
+            this.label_logout.TabStop = true;
+            this.label_logout.Text = "Log out!";
+            this.label_logout.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label_logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label_logout_LinkClicked);
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
@@ -175,14 +193,16 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(871, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 3;
+            this.button1.TabStop = false;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -256,19 +276,6 @@
             this.listWindow1.Size = new System.Drawing.Size(899, 507);
             this.listWindow1.TabIndex = 1;
             this.listWindow1.Load += new System.EventHandler(this.listWindow1_Load);
-            // 
-            // label_logout
-            // 
-            this.label_logout.AutoSize = true;
-            this.label_logout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label_logout.Location = new System.Drawing.Point(815, 9);
-            this.label_logout.Name = "label_logout";
-            this.label_logout.Size = new System.Drawing.Size(50, 13);
-            this.label_logout.TabIndex = 6;
-            this.label_logout.TabStop = true;
-            this.label_logout.Text = "Log out!";
-            this.label_logout.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label_logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label_logout_LinkClicked);
             // 
             // Form1
             // 

@@ -23,3 +23,7 @@ C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Re
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\obj\Release\Watchier.csprojResolveAssemblyReference.cache
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\obj\Release\Watchier.exe
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\obj\Release\Watchier.pdb
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Release\Newtonsoft.Json.dll
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Release\TMDbLib.dll
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Release\Newtonsoft.Json.xml
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Release\TMDbLib.pdb

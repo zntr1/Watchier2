@@ -38,33 +38,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel_info = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textbox_genres = new System.Windows.Forms.RichTextBox();
+            this.textbox_description = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_votes = new System.Windows.Forms.Label();
+            this.label_rating = new System.Windows.Forms.Label();
+            this.label_homepage = new System.Windows.Forms.LinkLabel();
+            this.label_lastAired = new System.Windows.Forms.Label();
+            this.label_inProduction = new System.Windows.Forms.Label();
+            this.label_firstAired = new System.Windows.Forms.Label();
+            this.label_runtime = new System.Windows.Forms.Label();
+            this.label_episodeCount = new System.Windows.Forms.Label();
+            this.label_seasons = new System.Windows.Forms.Label();
+            this.label32323 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label_rateNow = new System.Windows.Forms.LinkLabel();
             this.button_addToList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label32323 = new System.Windows.Forms.Label();
-            this.label_seasons = new System.Windows.Forms.Label();
-            this.label_episodeCount = new System.Windows.Forms.Label();
-            this.label_runtime = new System.Windows.Forms.Label();
-            this.label_firstAired = new System.Windows.Forms.Label();
-            this.label_inProduction = new System.Windows.Forms.Label();
-            this.label_lastAired = new System.Windows.Forms.Label();
-            this.label_homepage = new System.Windows.Forms.LinkLabel();
-            this.label_rating = new System.Windows.Forms.Label();
-            this.label_votes = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textbox_description = new System.Windows.Forms.RichTextBox();
-            this.textbox_genres = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_search)).BeginInit();
             this.panel_info.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,13 +103,12 @@
             // 
             // picturebox_search
             // 
-            this.picturebox_search.Dock = System.Windows.Forms.DockStyle.Right;
             this.picturebox_search.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_search.Image")));
             this.picturebox_search.InitialImage = ((System.Drawing.Image)(resources.GetObject("picturebox_search.InitialImage")));
-            this.picturebox_search.Location = new System.Drawing.Point(587, 0);
+            this.picturebox_search.Location = new System.Drawing.Point(587, 69);
             this.picturebox_search.Margin = new System.Windows.Forms.Padding(0);
             this.picturebox_search.Name = "picturebox_search";
-            this.picturebox_search.Size = new System.Drawing.Size(312, 507);
+            this.picturebox_search.Size = new System.Drawing.Size(312, 438);
             this.picturebox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picturebox_search.TabIndex = 3;
             this.picturebox_search.TabStop = false;
@@ -133,7 +133,7 @@
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(445, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Votes:";
             // 
@@ -162,10 +162,10 @@
             // 
             // panel_info
             // 
+            this.panel_info.Controls.Add(this.label1);
+            this.panel_info.Controls.Add(this.textbox_description);
             this.panel_info.Controls.Add(this.richTextBox1);
             this.panel_info.Controls.Add(this.textbox_genres);
-            this.panel_info.Controls.Add(this.textbox_description);
-            this.panel_info.Controls.Add(this.label1);
             this.panel_info.Controls.Add(this.label_votes);
             this.panel_info.Controls.Add(this.label_rating);
             this.panel_info.Controls.Add(this.label_homepage);
@@ -195,10 +195,273 @@
             this.panel_info.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_info.Location = new System.Drawing.Point(0, 69);
             this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(587, 438);
+            this.panel_info.Size = new System.Drawing.Size(899, 438);
             this.panel_info.TabIndex = 9;
             this.panel_info.Visible = false;
             this.panel_info.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox1.Location = new System.Drawing.Point(20, 95);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(194, 200);
+            this.richTextBox1.TabIndex = 43;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = "";
+            // 
+            // textbox_genres
+            // 
+            this.textbox_genres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.textbox_genres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbox_genres.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textbox_genres.Location = new System.Drawing.Point(292, 382);
+            this.textbox_genres.Name = "textbox_genres";
+            this.textbox_genres.ReadOnly = true;
+            this.textbox_genres.Size = new System.Drawing.Size(280, 38);
+            this.textbox_genres.TabIndex = 42;
+            this.textbox_genres.TabStop = false;
+            this.textbox_genres.Text = "";
+            this.textbox_genres.TextChanged += new System.EventHandler(this.textbox_genres_TextChanged);
+            // 
+            // textbox_description
+            // 
+            this.textbox_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.textbox_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbox_description.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textbox_description.Location = new System.Drawing.Point(243, 256);
+            this.textbox_description.Name = "textbox_description";
+            this.textbox_description.ReadOnly = true;
+            this.textbox_description.Size = new System.Drawing.Size(328, 123);
+            this.textbox_description.TabIndex = 41;
+            this.textbox_description.TabStop = false;
+            this.textbox_description.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label1.Location = new System.Drawing.Point(-9, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(931, 2);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
+            // 
+            // label_votes
+            // 
+            this.label_votes.AutoSize = true;
+            this.label_votes.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_votes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_votes.Location = new System.Drawing.Point(511, 95);
+            this.label_votes.Name = "label_votes";
+            this.label_votes.Size = new System.Drawing.Size(23, 13);
+            this.label_votes.TabIndex = 40;
+            this.label_votes.Text = "n.V";
+            // 
+            // label_rating
+            // 
+            this.label_rating.AutoSize = true;
+            this.label_rating.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_rating.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_rating.Location = new System.Drawing.Point(511, 72);
+            this.label_rating.Name = "label_rating";
+            this.label_rating.Size = new System.Drawing.Size(23, 13);
+            this.label_rating.TabIndex = 39;
+            this.label_rating.Text = "n.V";
+            // 
+            // label_homepage
+            // 
+            this.label_homepage.AutoSize = true;
+            this.label_homepage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_homepage.LinkColor = System.Drawing.Color.White;
+            this.label_homepage.Location = new System.Drawing.Point(322, 210);
+            this.label_homepage.Name = "label_homepage";
+            this.label_homepage.Size = new System.Drawing.Size(24, 13);
+            this.label_homepage.TabIndex = 38;
+            this.label_homepage.TabStop = true;
+            this.label_homepage.Text = "n.V";
+            this.label_homepage.Visible = false;
+            // 
+            // label_lastAired
+            // 
+            this.label_lastAired.AutoSize = true;
+            this.label_lastAired.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lastAired.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_lastAired.Location = new System.Drawing.Point(322, 187);
+            this.label_lastAired.Name = "label_lastAired";
+            this.label_lastAired.Size = new System.Drawing.Size(23, 13);
+            this.label_lastAired.TabIndex = 37;
+            this.label_lastAired.Text = "n.V";
+            // 
+            // label_inProduction
+            // 
+            this.label_inProduction.AutoSize = true;
+            this.label_inProduction.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_inProduction.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_inProduction.Location = new System.Drawing.Point(360, 164);
+            this.label_inProduction.Name = "label_inProduction";
+            this.label_inProduction.Size = new System.Drawing.Size(23, 13);
+            this.label_inProduction.TabIndex = 36;
+            this.label_inProduction.Text = "n.V";
+            // 
+            // label_firstAired
+            // 
+            this.label_firstAired.AutoSize = true;
+            this.label_firstAired.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_firstAired.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_firstAired.Location = new System.Drawing.Point(322, 141);
+            this.label_firstAired.Name = "label_firstAired";
+            this.label_firstAired.Size = new System.Drawing.Size(23, 13);
+            this.label_firstAired.TabIndex = 35;
+            this.label_firstAired.Text = "n.V";
+            // 
+            // label_runtime
+            // 
+            this.label_runtime.AutoSize = true;
+            this.label_runtime.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_runtime.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_runtime.Location = new System.Drawing.Point(322, 118);
+            this.label_runtime.Name = "label_runtime";
+            this.label_runtime.Size = new System.Drawing.Size(23, 13);
+            this.label_runtime.TabIndex = 34;
+            this.label_runtime.Text = "n.V";
+            // 
+            // label_episodeCount
+            // 
+            this.label_episodeCount.AutoSize = true;
+            this.label_episodeCount.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_episodeCount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_episodeCount.Location = new System.Drawing.Point(322, 95);
+            this.label_episodeCount.Name = "label_episodeCount";
+            this.label_episodeCount.Size = new System.Drawing.Size(23, 13);
+            this.label_episodeCount.TabIndex = 33;
+            this.label_episodeCount.Text = "n.V";
+            // 
+            // label_seasons
+            // 
+            this.label_seasons.AutoSize = true;
+            this.label_seasons.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_seasons.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_seasons.Location = new System.Drawing.Point(322, 72);
+            this.label_seasons.Name = "label_seasons";
+            this.label_seasons.Size = new System.Drawing.Size(23, 13);
+            this.label_seasons.TabIndex = 32;
+            this.label_seasons.Text = "n.V";
+            // 
+            // label32323
+            // 
+            this.label32323.AutoSize = true;
+            this.label32323.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label32323.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32323.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label32323.Location = new System.Drawing.Point(242, 72);
+            this.label32323.Name = "label32323";
+            this.label32323.Size = new System.Drawing.Size(51, 13);
+            this.label32323.TabIndex = 30;
+            this.label32323.Text = "Seasons:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label13.Location = new System.Drawing.Point(241, 382);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Genres:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label12.Location = new System.Drawing.Point(241, 210);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Homepage:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label11.Location = new System.Drawing.Point(241, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Last aired:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label10.Location = new System.Drawing.Point(241, 164);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Still in Production?:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label9.Location = new System.Drawing.Point(241, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "First aired:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(241, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Runtime:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label7.Location = new System.Drawing.Point(241, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Episodes:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(17, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Seasons:";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
+            this.label6.Location = new System.Drawing.Point(-3, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(593, 2);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "label6";
             // 
             // label_rateNow
             // 
@@ -229,12 +492,13 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button_reset);
             this.panel2.Controls.Add(this.combobox_search);
             this.panel2.Controls.Add(this.label_search);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(587, 63);
+            this.panel2.Size = new System.Drawing.Size(899, 69);
             this.panel2.TabIndex = 10;
             // 
             // notifyIcon1
@@ -242,267 +506,23 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // label6
+            // button_reset
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label6.Location = new System.Drawing.Point(-3, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(593, 2);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "label6";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(17, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Seasons:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(241, 95);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Episodes:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(241, 118);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Runtime:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(241, 141);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "First aired:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label10.Location = new System.Drawing.Point(241, 164);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Still in Production?:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(241, 187);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Last aired:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(241, 210);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Homepage:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(241, 382);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 13);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Genres:";
-            // 
-            // label32323
-            // 
-            this.label32323.AutoSize = true;
-            this.label32323.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label32323.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32323.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label32323.Location = new System.Drawing.Point(242, 72);
-            this.label32323.Name = "label32323";
-            this.label32323.Size = new System.Drawing.Size(51, 13);
-            this.label32323.TabIndex = 30;
-            this.label32323.Text = "Seasons:";
-            // 
-            // label_seasons
-            // 
-            this.label_seasons.AutoSize = true;
-            this.label_seasons.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_seasons.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_seasons.Location = new System.Drawing.Point(322, 72);
-            this.label_seasons.Name = "label_seasons";
-            this.label_seasons.Size = new System.Drawing.Size(23, 13);
-            this.label_seasons.TabIndex = 32;
-            this.label_seasons.Text = "n.V";
-            // 
-            // label_episodeCount
-            // 
-            this.label_episodeCount.AutoSize = true;
-            this.label_episodeCount.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_episodeCount.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_episodeCount.Location = new System.Drawing.Point(322, 95);
-            this.label_episodeCount.Name = "label_episodeCount";
-            this.label_episodeCount.Size = new System.Drawing.Size(23, 13);
-            this.label_episodeCount.TabIndex = 33;
-            this.label_episodeCount.Text = "n.V";
-            // 
-            // label_runtime
-            // 
-            this.label_runtime.AutoSize = true;
-            this.label_runtime.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_runtime.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_runtime.Location = new System.Drawing.Point(322, 118);
-            this.label_runtime.Name = "label_runtime";
-            this.label_runtime.Size = new System.Drawing.Size(23, 13);
-            this.label_runtime.TabIndex = 34;
-            this.label_runtime.Text = "n.V";
-            // 
-            // label_firstAired
-            // 
-            this.label_firstAired.AutoSize = true;
-            this.label_firstAired.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_firstAired.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_firstAired.Location = new System.Drawing.Point(322, 141);
-            this.label_firstAired.Name = "label_firstAired";
-            this.label_firstAired.Size = new System.Drawing.Size(23, 13);
-            this.label_firstAired.TabIndex = 35;
-            this.label_firstAired.Text = "n.V";
-            // 
-            // label_inProduction
-            // 
-            this.label_inProduction.AutoSize = true;
-            this.label_inProduction.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_inProduction.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_inProduction.Location = new System.Drawing.Point(360, 164);
-            this.label_inProduction.Name = "label_inProduction";
-            this.label_inProduction.Size = new System.Drawing.Size(23, 13);
-            this.label_inProduction.TabIndex = 36;
-            this.label_inProduction.Text = "n.V";
-            // 
-            // label_lastAired
-            // 
-            this.label_lastAired.AutoSize = true;
-            this.label_lastAired.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_lastAired.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_lastAired.Location = new System.Drawing.Point(322, 187);
-            this.label_lastAired.Name = "label_lastAired";
-            this.label_lastAired.Size = new System.Drawing.Size(23, 13);
-            this.label_lastAired.TabIndex = 37;
-            this.label_lastAired.Text = "n.V";
-            // 
-            // label_homepage
-            // 
-            this.label_homepage.AutoSize = true;
-            this.label_homepage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_homepage.LinkColor = System.Drawing.Color.White;
-            this.label_homepage.Location = new System.Drawing.Point(322, 210);
-            this.label_homepage.Name = "label_homepage";
-            this.label_homepage.Size = new System.Drawing.Size(24, 13);
-            this.label_homepage.TabIndex = 38;
-            this.label_homepage.Text = "n.V";
-            this.label_homepage.Visible = false;
-            // 
-            // label_rating
-            // 
-            this.label_rating.AutoSize = true;
-            this.label_rating.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_rating.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_rating.Location = new System.Drawing.Point(511, 72);
-            this.label_rating.Name = "label_rating";
-            this.label_rating.Size = new System.Drawing.Size(23, 13);
-            this.label_rating.TabIndex = 39;
-            this.label_rating.Text = "n.V";
-            // 
-            // label_votes
-            // 
-            this.label_votes.AutoSize = true;
-            this.label_votes.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_votes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_votes.Location = new System.Drawing.Point(511, 95);
-            this.label_votes.Name = "label_votes";
-            this.label_votes.Size = new System.Drawing.Size(23, 13);
-            this.label_votes.TabIndex = 40;
-            this.label_votes.Text = "n.V";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label1.Location = new System.Drawing.Point(-9, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(593, 2);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "label1";
-            // 
-            // textbox_description
-            // 
-            this.textbox_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.textbox_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbox_description.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textbox_description.Location = new System.Drawing.Point(244, 256);
-            this.textbox_description.Name = "textbox_description";
-            this.textbox_description.ReadOnly = true;
-            this.textbox_description.Size = new System.Drawing.Size(328, 123);
-            this.textbox_description.TabIndex = 41;
-            this.textbox_description.TabStop = false;
-            this.textbox_description.Text = "";
-            // 
-            // textbox_genres
-            // 
-            this.textbox_genres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.textbox_genres.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbox_genres.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textbox_genres.Location = new System.Drawing.Point(292, 382);
-            this.textbox_genres.Name = "textbox_genres";
-            this.textbox_genres.ReadOnly = true;
-            this.textbox_genres.Size = new System.Drawing.Size(280, 38);
-            this.textbox_genres.TabIndex = 42;
-            this.textbox_genres.TabStop = false;
-            this.textbox_genres.Text = "";
-            this.textbox_genres.TextChanged += new System.EventHandler(this.textbox_genres_TextChanged);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox1.Location = new System.Drawing.Point(20, 95);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(194, 200);
-            this.richTextBox1.TabIndex = 43;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = "";
+            this.button_reset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_reset.BackgroundImage")));
+            this.button_reset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_reset.CausesValidation = false;
+            this.button_reset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_reset.FlatAppearance.BorderSize = 0;
+            this.button_reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button_reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_reset.Location = new System.Drawing.Point(355, 25);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(19, 21);
+            this.button_reset.TabIndex = 3;
+            this.button_reset.TabStop = false;
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // searchView
             // 
@@ -510,8 +530,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel_info);
             this.Controls.Add(this.picturebox_search);
+            this.Controls.Add(this.panel_info);
             this.Name = "searchView";
             this.Size = new System.Drawing.Size(899, 507);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_search)).EndInit();
@@ -560,5 +580,6 @@
         private System.Windows.Forms.RichTextBox textbox_description;
         private System.Windows.Forms.RichTextBox textbox_genres;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button_reset;
     }
 }

@@ -27,71 +27,50 @@ namespace Watchier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            DataGridViewTextBoxColumn nameCol;
-            datagrid.Column
-            nameCol.DataPropertyName = "name";
-
-            datagrid.AutoGenerateColumns = false;
-            datagrid.DataSource = null;
-
-            var list = new BindingList<Result>();
-
-
-
-            foreach (Result go in resultList)
-            {
-                Result dggo = new Result();
-                dggo.resultName = go.resultName;
-                list.Add(dggo);
-            }
-            datagrid.DataSource = list;
-            datagrid.Invalidate();
-            */
-
-            /*DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
-            Image image = Image.FromFile(@"C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier\Watchier\Images\Rick and Morty.png");
-            imgCol.Image = image;
-            datagrid.Columns.Add(imgCol);
-            imgCol.HeaderText = "Image";
-            imgCol.Name = "img";
-
-            datagrid.ColumnCount = 3;
-            datagrid.Columns[0].Name = "Preview";
-            datagrid.Columns[1].Name = "Title";
-            datagrid.Columns[2].Name = "Views";
-
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            DataGridView1.DataSource = ds.Tables[0];
-
-
-
-
-            string[] row = new string[] { "1", "Product 1", "1000" };
-            datagrid.Rows.Add(row);
-            row = new string[] { "2", "Product 2", "2000" };
-            datagrid.Rows.Add(row);
-            row = new string[] { "3", "Product 3", "3000" };
-            datagrid.Rows.Add(row);
-            row = new string[] { "4", "Product 4", "4000" };
-            datagrid.Rows.Add(row);*/
-
+            Image image = Image.FromFile(@"C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\Images\Frankenstein.png");
             DBConnect dbservice = new DBConnect();
-            MySqlConnection conn = dbservice.Connection;
-
-            string query = $"SELECT * FROM sql11194737.entries WHERE userId={Form1.User.id}";
-
-            var columnLists = dbservice.SelectEntryRow(Form1.User.id);
             var savedResults = new List<Result>();
-
-            // Doppelt gemoppelt mit resultById
+            var columnLists = dbservice.SelectEntryRow(Form1.User.id);
             for (int i = 0; i < columnLists[0].Count; i++)
             {
                 Result res = Result.getResultById(int.Parse(columnLists[1][i]));
                 savedResults.Add(res);
             }
+
+           
+            datagrid.Columns[0].Width = 200;
+            var d = datagrid.Columns[0] as DataGridViewImageColumn;
+            d.ImageLayout = DataGridViewImageCellLayout.Stretch; // Funzt. Wallah geil
+            
+
+            
+
+            int index = 0;
+            foreach (var result in savedResults){
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(datagrid); // needed, Create Cells oder sind nicht da
+                row.Height = 200;   // Seite Höhe der row
+                row.Cells[0].Value = Image.FromFile(Form1.localImagePath + result.name + ".png");
+                row.Cells[1].Value = result.name;
+                row.Cells[2].Value = result.rating;
+                row.Cells[3].Value = "4/6";
+
+                datagrid.Rows.Insert(index, row);
+                index++;
+            }
+           
+            
+            // datagrid.Columns[0].HeaderText = "Images";
+
+            /*
+            
+
+            string query = $"SELECT * FROM sql11194737.entries WHERE userId={Form1.User.id}";
+
+            var columnLists = dbservice.SelectEntryRow(Form1.User.id);
+
+            // Doppelt gemoppelt mit resultById
+         
 
             DataGridViewTextBoxColumn col0_textbox = new DataGridViewTextBoxColumn();
             col0_textbox.HeaderText = "Feld1";
@@ -124,10 +103,11 @@ namespace Watchier
                     */
 
 
-                }
-            }
-            
-            
+            //}
+
+            //  }
+
+
         }
     }
 }

@@ -55,8 +55,7 @@ namespace Watchier
                 e.Handled = true;
                 e.SuppressKeyPress = true;
 
-                if (combobox_search.Text.ToLower().Contains(lastComboBoxSearch.ToLower()) || 
-                    combobox_search.Text == "") return;
+                if (combobox_search.Text == "") return;
                 
                 ResultList.Clear();
                 combobox_search.DataSource = ResultList;                               
@@ -68,6 +67,7 @@ namespace Watchier
          
                 combobox_search.DroppedDown = true;
                 Cursor.Current = Cursors.Default; // restore mouse after dropDown
+                textbox_description.BackColor = Color.FromArgb(37,37,38);
             }
         }
 
@@ -132,7 +132,7 @@ namespace Watchier
             // If Result exists in our List already, set Button text to "Edit in my list", "Remove from my List"
             // "Check for new Episodes", "Rate"
             // else "Add to my List", "Rate"
-
+            textbox_description.BackColor = Color.FromArgb(37, 37, 38);
         }
 
         private void combobox_search_SelectedValueChanged(object sender, EventArgs e)
@@ -196,6 +196,15 @@ namespace Watchier
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_reset_Click(object sender, EventArgs e){
+
+            ResultList.Clear();
+            combobox_search.ResetText();
+            combobox_search.DataSource = ResultList;
+            panel_info.Visible = false;
+            picturebox_search.Visible = false;
         }
     }
 }

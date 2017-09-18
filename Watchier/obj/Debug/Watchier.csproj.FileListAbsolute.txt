@@ -77,3 +77,7 @@ C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\b
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\bin\Debug\TMDbLib.dll
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\bin\Debug\Newtonsoft.Json.xml
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\bin\Debug\TMDbLib.pdb
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\Newtonsoft.Json.dll
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\TMDbLib.dll
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\Newtonsoft.Json.xml
+C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\TMDbLib.pdb
