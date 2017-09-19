@@ -109,6 +109,7 @@ namespace Watchier
             var loginForm = new LoginForm();
             loginForm.ShowDialog();
             label_username.Text = "Welcome, " + user.name;
+            notifyIcon.Visible = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -154,6 +155,41 @@ namespace Watchier
         private void label_logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Restart();
+        }
+        /// <summary>
+        /// ///
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Watchier_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == this.WindowState)
+            {
+                notifyIcon.ShowBalloonTip(250);
+                this.Hide();
+            }
+        }
+
+        private void mynotifyicon_DoubleClick(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void mynotifyicon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+   
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
         }
     }
 }

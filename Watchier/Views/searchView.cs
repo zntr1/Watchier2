@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace Watchier
 {
     public partial class searchView : UserControl
     {
-        List<String> listSearchResults = new List<String>(); 
+        List<String> listSearchResults = new List<String>();
         string posterPath = (@"https://image.tmdb.org/t/p/w500/");
         static List<Result> resultList = new List<Result>();
         private string lastComboBoxSearch = "OwlCatDestroyer";
@@ -47,33 +48,34 @@ namespace Watchier
 
         private void combobox_search_KeyDown(object sender, KeyEventArgs e)
         {
-            ComboBox combobox_search = sender as ComboBox;
+            ComboBox combobox_searche = sender as ComboBox;
 
             if (e.KeyCode == Keys.Enter)
             {
+
                 // gegen Beeps und autoclose
                 e.Handled = true;
                 e.SuppressKeyPress = true;
 
-                if (combobox_search.Text == "") return;
-                
+                if (combobox_searche.Text == "") return;
+
                 ResultList.Clear();
-                combobox_search.DataSource = ResultList;                               
+                combobox_searche.DataSource = ResultList;
 
                 // Logic Part!
-                ResultList = Result.getAllResultsByName(combobox_search.Text);
-                lastComboBoxSearch = combobox_search.Text;
-                combobox_search.DataSource = ResultList.Select(element => element.name).ToList();
-         
-                combobox_search.DroppedDown = true;
+                ResultList = Result.getAllResultsByName(combobox_searche.Text);
+                lastComboBoxSearch = combobox_searche.Text;
+                combobox_searche.DataSource = ResultList.Select(element => element.name).ToList();
+
+                combobox_searche.DroppedDown = true;
                 Cursor.Current = Cursors.Default; // restore mouse after dropDown
-                textbox_description.BackColor = Color.FromArgb(37,37,38);
+                textbox_description.BackColor = Color.FromArgb(37, 37, 38);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void combobox_search_KeyUp(object sender, KeyEventArgs e)
@@ -88,11 +90,11 @@ namespace Watchier
         private void combobox_search_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combobox_search = sender as ComboBox;
-            if (combobox_search.SelectedIndex == -1)  return; 
+            if (combobox_search.SelectedIndex == -1) return;
 
             string selectedItem = (string)combobox_search.SelectedItem;
             int selectedIndex = combobox_search.SelectedIndex;
-            
+
 
             result = ResultList[selectedIndex];
 
@@ -101,10 +103,10 @@ namespace Watchier
 
             label_titel.Text = result.name;
             label_votes.Text = result.votes.ToString();
-            label_rating.Text = (result.rating*10).ToString().Substring(0,2)+"%";
+            label_rating.Text = result.rating > 0 ? (result.rating * 10).ToString().Substring(0, 2) + "%" : "n.V";
             label_seasons.Text = result.numberOfSeasons.ToString();
             label_episodeCount.Text = result.numberOfEpisodes.ToString();
-            label_runtime.Text = result.episodeTime.First().ToString()+"m";
+            label_runtime.Text = result.episodeTime.FirstOrDefault().ToString() + "m";
             label_firstAired.Text = result.firstAirDate.ToString();
             label_inProduction.Text = result.inProduction.ToString();
             label_lastAired.Text = result.lastAirDate.ToString();
@@ -113,8 +115,8 @@ namespace Watchier
             textbox_genres.Text = string.Join(",", result.genres.Select(genre => genre.Name).ToList());
             textbox_description.Text = result.overview;
 
-            string localPath = Application.StartupPath; 
-            string localImagePath = (localPath+"\\Images\\" + result.name + ".png");
+            string localPath = Application.StartupPath;
+            string localImagePath = (localPath + "\\Images\\" + result.name + ".png");
             string posterPathUrl = @"https://image.tmdb.org/t/p/w500/" + result.posterPath;
 
             // If File does not Exist, download. Else, skip!
@@ -125,7 +127,8 @@ namespace Watchier
                     client.DownloadFile(posterPathUrl, localImagePath);
                 }
             }
-            
+            var oldImg = picturebox_search.Image;
+            if (oldImg != null) { oldImg.Dispose(); Console.WriteLine("Altes Bild gelöscht"); }
             picturebox_search.Image = Image.FromFile(localImagePath);
             picturebox_search.SizeMode = PictureBoxSizeMode.StretchImage; // Change to Stretch
 
@@ -137,17 +140,17 @@ namespace Watchier
 
         private void combobox_search_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void combobox_search_DataSourceChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void combobox_search_TextUpdate(object sender, EventArgs e)
         {
-          
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -173,9 +176,17 @@ namespace Watchier
             string infoGen = infoGeneralSB.ToString();
             string infoUser = infoUserSB.ToString();
 
-            // Hier weitermachen DB Connection umändern damit entries table accessible wird!
 
-            dbservice.Insert(infoGen, infoUser, user.id);
+            // Hier weitermachen DB Connection umändern damit entries table accessible wird!
+            if (dbservice.Count(result.id, user.id) == 0)
+            {
+                dbservice.Insert(infoGen, infoUser, user.id);
+            }
+            else
+            {
+                Console.WriteLine("DUPLICATE, not inserting");
+            }
+
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -198,7 +209,8 @@ namespace Watchier
 
         }
 
-        private void button_reset_Click(object sender, EventArgs e){
+        private void button_reset_Click(object sender, EventArgs e)
+        {
 
             ResultList.Clear();
             combobox_search.ResetText();

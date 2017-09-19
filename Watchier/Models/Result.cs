@@ -94,6 +94,11 @@ namespace Watchier
         }
 
         // Weiß net, unnötig.. First Result
+        /// <summary>
+        /// Get first Result!
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public static Result getResultByName(string title)
         {
             Result res = new Result();

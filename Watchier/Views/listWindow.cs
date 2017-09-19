@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Reflection;
 
 namespace Watchier
 {
@@ -27,7 +28,6 @@ namespace Watchier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Image image = Image.FromFile(@"C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\Images\Frankenstein.png");
             DBConnect dbservice = new DBConnect();
             var savedResults = new List<Result>();
             var columnLists = dbservice.SelectEntryRow(Form1.User.id);
@@ -41,9 +41,11 @@ namespace Watchier
             datagrid.Columns[0].Width = 200;
             var d = datagrid.Columns[0] as DataGridViewImageColumn;
             d.ImageLayout = DataGridViewImageCellLayout.Stretch; // Funzt. Wallah geil
-            
 
-            
+            /* Damit doch per Pixel Scroll?!
+            PropertyInfo verticalOffset = datagrid.GetType().GetProperty("VerticalOffset", BindingFlags.NonPublic | BindingFlags.Instance);
+            verticalOffset.SetValue(this.datagrid, 10, null);
+            */
 
             int index = 0;
             foreach (var result in savedResults){
@@ -108,6 +110,56 @@ namespace Watchier
             //  }
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DBConnect dbservice = new DBConnect();
+            var savedResults = new List<Result>();
+            var columnLists = dbservice.SelectEntryRow(Form1.User.id);
+            Console.WriteLine(columnLists[0].Count);
+            for (int i = 0; i < columnLists[0].Count; i++)
+            {
+                Result res = Result.getResultById(int.Parse(columnLists[1][i]));
+                savedResults.Add(res);
+            }
+
+            flowpanel1.Controls.Clear();
+
+            foreach (var res in savedResults)
+            {
+                Panel newPan = new Panel();
+                newPan.Width = 876;
+                newPan.Height = 250;
+
+                // Create Panel Dinge
+                
+                Image img = Image.FromFile(Form1.localImagePath + res.name + ".png");
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = img;
+                pictureBox.Height = 250;
+                pictureBox.Width = 170;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                newPan.Controls.Add(pictureBox);
+
+
+                Label label_name = new Label();
+                label_name.Text = res.name;
+                Label label_rating = new Label();
+                label_rating.Text = res.rating.ToString();
+                newPan.Controls.Add(label_name);
+                label_name.Location = new Point(230, 110);
+
+                Console.WriteLine("adding new Panel!");
+                newPan.Controls.Add(label_rating);
+
+
+
+
+
+                flowpanel1.Controls.Add(newPan);
+            }
+            
         }
     }
 }

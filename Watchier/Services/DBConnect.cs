@@ -361,18 +361,18 @@ namespace Watchier
                 //Open connection
                 if (this.OpenConnection() == true)
                 {
-
                     //Create Command
                     MySqlCommand cmd = new MySqlCommand(query, Connection);
                     cmd.Parameters.Add(new MySqlParameter("@userId", userId));
 
                     //Create a data reader and Execute the command
                     MySqlDataReader dataReader = cmd.ExecuteReader();
-                    dataReader.Read();
+                    //dataReader.Read(); Das ist falsch. Damit greifst du ja schon die erste Line ab.. 
 
                     //Read the data and store them in the list, ignore salt and Hash
                     while (dataReader.Read())
                     {
+                        Console.WriteLine("+1 Selected");
                         list[0].Add(dataReader["entryId"] + "");
                         list[1].Add(dataReader["infoGeneral"] + "");
                         list[2].Add(dataReader["infoUser"] + "");
@@ -402,10 +402,11 @@ namespace Watchier
         }
 
 
-        //Count statement
-        public int Count()
+        //Count Entries in "entries" based on userId
+        public int Count(int resultId, int userId)
         {
-            string query = "SELECT Count(*) FROM tableinfo";
+
+            string query = $"SELECT Count(entryId) FROM entries WHERE userid={userId} AND infoGeneral={resultId}";
             int Count = -1;
 
             //Open Connection

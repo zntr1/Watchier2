@@ -35,6 +35,7 @@
             this.button_check = new System.Windows.Forms.Button();
             this.textbox_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button_check);
             this.panel2.Controls.Add(this.textbox_username);
             this.panel2.Controls.Add(this.label1);
@@ -118,6 +120,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "UserManagement:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(438, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Get Ip!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // userWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.RichTextBox textbox_status;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_check;
+        private System.Windows.Forms.Button button1;
     }
 }
