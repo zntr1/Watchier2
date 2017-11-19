@@ -115,14 +115,14 @@ namespace Watchier
 
             string localPath = Application.StartupPath; 
             string localImagePath = (localPath+"\\Images\\" + result.name + ".png");
-            string posterPathUrl = @"https://image.tmdb.org/t/p/w500/" + result.posterPath;
+           
 
             // If File does not Exist, download. Else, skip!
             if (!File.Exists(localImagePath))
             {
                 using (WebClient client = new WebClient())
                 {
-                    client.DownloadFile(posterPathUrl, localImagePath);
+                    client.DownloadFile(result.posterPath, localImagePath);
                 }
             }
             
@@ -175,7 +175,7 @@ namespace Watchier
 
             // Hier weitermachen DB Connection umändern damit entries table accessible wird!
 
-            dbservice.Insert(infoGen, infoUser, user.id);
+            dbservice.Insert(infoGen, infoUser, user.id, result.posterPath);
         }
 
         private void label9_Click(object sender, EventArgs e)

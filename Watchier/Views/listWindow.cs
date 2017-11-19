@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,10 +48,16 @@ namespace Watchier
 
             int index = 0;
             foreach (var result in savedResults){
+                var request = WebRequest.Create(result.posterPath);
+
+                var response = request.GetResponse();
+                var stream = response.GetResponseStream();
+
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(datagrid); // needed, Create Cells oder sind nicht da
                 row.Height = 200;   // Seite Höhe der row
-                row.Cells[0].Value = Image.FromFile(Form1.localImagePath + result.name + ".png");
+                row.Cells[0].Value = Image.FromStream(stream);
+                //row.Cells[0].Value = Image.FromFile(Form1.localImagePath + result.name + ".png");
                 row.Cells[1].Value = result.name;
                 row.Cells[2].Value = result.rating;
                 row.Cells[3].Value = "4/6";

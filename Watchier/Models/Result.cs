@@ -74,7 +74,7 @@ namespace Watchier
 
             res.id = show.Id;
             res.name = show.Name != null ? show.Name : res.name;
-            res.posterPath = show.PosterPath != null ? show.PosterPath : res.posterPath;
+            res.posterPath = show.PosterPath != null ? @"https://image.tmdb.org/t/p/w500/" + show.PosterPath : @"https://image.tmdb.org/t/p/w500/" + res.posterPath;
             res.inProduction = show.InProduction;
             res.rating = show.VoteAverage;
             res.votes = show.VoteCount;

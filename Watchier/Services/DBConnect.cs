@@ -38,10 +38,10 @@ namespace Watchier
         private void Initialize()
         {
             string connectionString;
-            server = "sql11.freemysqlhosting.net";
-            database = "sql11194737";
-            uid = "sql11194737";
-            password = "cbzZKIaeaB";
+            server = "s131.goserver.host";
+            database = "web201_db1";
+            uid = "web201";
+            password = "Penisloch12";
 
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -135,7 +135,7 @@ namespace Watchier
         }
 
         //Insert into entries statement
-        public void Insert(string infoGeneral, string infoUser, int userId)
+        public void Insert(string infoGeneral, string infoUser, int userId, string posterPath)
         {
             string localDate = DateTime.Now.ToString();
             string query = "INSERT INTO entries (infoGeneral, infoUser, dateAdded, userId) VALUES(@infoGeneral, @infoUser, @localDate, @userId)";
@@ -151,7 +151,7 @@ namespace Watchier
                     cmd.Parameters.Add(new MySqlParameter("@infoGeneral", infoGeneral));
                     cmd.Parameters.Add(new MySqlParameter("@infoUser", infoUser));
                     cmd.Parameters.Add(new MySqlParameter("@localDate", localDate)); 
-                    cmd.Parameters.Add(new MySqlParameter("@userId", userId));  
+                    cmd.Parameters.Add(new MySqlParameter("@userId", userId));
 
                     //Execute command
                     cmd.ExecuteNonQuery();
@@ -209,7 +209,7 @@ namespace Watchier
         //Select users statement
         public List<string>[] SelectUsers()
         {
-            string query = "SELECT * FROM sql11194737.users";
+            string query = "SELECT * FROM web201_db1.users";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -251,7 +251,7 @@ namespace Watchier
         //Select statement Select Everything
         public List<string> SelectUserRow(string username)
         {
-            string query = "SELECT * FROM sql11194737.users WHERE username=@name";
+            string query = "SELECT * FROM web201_db1.users WHERE username=@name";
 
             //Create a list to store the result
             List<string> list = new List<string>();
@@ -300,11 +300,11 @@ namespace Watchier
         //Select users statement
         public List<string>[] SelectEntries()
         {
-            string query = "SELECT * FROM sql11194737.entries";
+            string query = "SELECT * FROM web201_db1.entries";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[5];
-            list[0] = new List<string>(); // entryId
+            list[0] = new List<string>(); // Id
             list[1] = new List<string>(); // infoGeneral 
             list[2] = new List<string>(); // infoUser
             list[3] = new List<string>(); // dateAdded
@@ -321,7 +321,7 @@ namespace Watchier
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["entryId"] + "");
+                    list[0].Add(dataReader["Id"] + "");
                     list[1].Add(dataReader["infoGeneral"] + "");
                     list[2].Add(dataReader["infoUser"] + "");
                     list[3].Add(dataReader["dateAdded"] + "");
@@ -346,11 +346,11 @@ namespace Watchier
         //Select statement Select Everything
         public List<string>[] SelectEntryRow(int userId)
         {
-            string query = "SELECT * FROM sql11194737.entries WHERE userId=@userId";
+            string query = "SELECT * FROM web201_db1.entries WHERE userId=@userId";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[5];
-            list[0] = new List<string>(); // entryId Column
+            list[0] = new List<string>(); // Id Column
             list[1] = new List<string>(); // infoGene Column
             list[2] = new List<string>(); // infoUser Column
             list[3] = new List<string>(); // dateAdded Column
@@ -373,7 +373,7 @@ namespace Watchier
                     //Read the data and store them in the list, ignore salt and Hash
                     while (dataReader.Read())
                     {
-                        list[0].Add(dataReader["entryId"] + "");
+                        list[0].Add(dataReader["Id"] + "");
                         list[1].Add(dataReader["infoGeneral"] + "");
                         list[2].Add(dataReader["infoUser"] + "");
                         list[3].Add(dataReader["dateAdded"] + "");
@@ -431,7 +431,7 @@ namespace Watchier
         //Select Hash and Salt statement
         public List<byte[]> SelectSaltAndHash(string username)
         {
-            string query = "SELECT salt, hash FROM sql11194737.users WHERE username=@name";
+            string query = "SELECT salt, hash FROM web201_db1.users WHERE username=@name";
 
             //Create a list to store the result
             List<byte[]> list = new List<byte[]>();
@@ -477,7 +477,7 @@ namespace Watchier
         //Select Hash and Salt statement
         public bool UserExists(string username)
         {
-            string query = "SELECT username FROM sql11194737.users WHERE BINARY username=@name"; // Binary für exaktes Match auf Binärer ebene.
+            string query = "SELECT username FROM web201_db1.users WHERE BINARY username=@name"; // Binary für exaktes Match auf Binärer ebene.
             bool userExists = false;
 
             //Open connection
@@ -515,7 +515,7 @@ namespace Watchier
 
         public bool EmailExists(string email)
         {
-            string query = "SELECT username FROM sql11194737.users WHERE BINARY email=@email"; // Binary für exaktes Match auf Binärer ebene.
+            string query = "SELECT username FROM web201_db1.users WHERE BINARY email=@email"; // Binary für exaktes Match auf Binärer ebene.
             bool userExists = false;
 
             //Open connection
