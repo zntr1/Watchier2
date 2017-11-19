@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_side = new System.Windows.Forms.Panel();
             this.button_settings = new System.Windows.Forms.Button();
@@ -36,12 +37,15 @@
             this.button_logo = new System.Windows.Forms.Button();
             this.button_user = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
+            this.button_minimize = new System.Windows.Forms.Button();
             this.label_logout = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.picturebox_header = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.searchView1 = new Watchier.searchView();
             this.userWindow1 = new Watchier.userWindow();
             this.listWindow1 = new Watchier.listWindow();
@@ -150,6 +154,7 @@
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel_header.Controls.Add(this.button_minimize);
             this.panel_header.Controls.Add(this.label_logout);
             this.panel_header.Controls.Add(this.label1);
             this.panel_header.Controls.Add(this.button1);
@@ -165,11 +170,30 @@
             this.panel_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_header_MouseMove);
             this.panel_header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_header_MouseUp);
             // 
+            // button_minimize
+            // 
+            this.button_minimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button_minimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_minimize.BackgroundImage")));
+            this.button_minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_minimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button_minimize.FlatAppearance.BorderSize = 0;
+            this.button_minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button_minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_minimize.Location = new System.Drawing.Point(837, 0);
+            this.button_minimize.Name = "button_minimize";
+            this.button_minimize.Size = new System.Drawing.Size(28, 28);
+            this.button_minimize.TabIndex = 7;
+            this.button_minimize.TabStop = false;
+            this.button_minimize.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button_minimize.UseVisualStyleBackColor = false;
+            this.button_minimize.Click += new System.EventHandler(this.button_minimize_Click);
+            // 
             // label_logout
             // 
             this.label_logout.AutoSize = true;
             this.label_logout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(129)))), ((int)(((byte)(229)))));
-            this.label_logout.Location = new System.Drawing.Point(815, 9);
+            this.label_logout.Location = new System.Drawing.Point(781, 8);
             this.label_logout.Name = "label_logout";
             this.label_logout.Size = new System.Drawing.Size(50, 13);
             this.label_logout.TabIndex = 6;
@@ -237,15 +261,33 @@
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.panel_main.Controls.Add(this.searchView1);
+            this.panel_main.Controls.Add(this.statusStrip1);
             this.panel_main.Controls.Add(this.userWindow1);
             this.panel_main.Controls.Add(this.listWindow1);
+            this.panel_main.Controls.Add(this.searchView1);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(97, 86);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(899, 507);
             this.panel_main.TabIndex = 2;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "Watchier wird weiter ausgeführt";
+            this.notifyIcon.BalloonTipTitle = "Information";
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Watchier.exe";
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 485);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(899, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // searchView1
             // 
@@ -288,15 +330,18 @@
             this.Controls.Add(this.panel_side);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Watchier";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Watchier_Resize);
             this.panel_side.ResumeLayout(false);
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).EndInit();
             this.panel_main.ResumeLayout(false);
+            this.panel_main.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,6 +364,9 @@
         private System.Windows.Forms.PictureBox picturebox_header;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel label_logout;
+        private System.Windows.Forms.Button button_minimize;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

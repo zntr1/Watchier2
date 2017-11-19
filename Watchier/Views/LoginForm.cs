@@ -440,6 +440,7 @@ namespace Watchier
         {
         }
 
+        //Check Info for Results
         private void button1_Click_1(object sender, EventArgs e)
         {
             DBConnect db = new DBConnect();
@@ -450,14 +451,8 @@ namespace Watchier
             var dump = ObjectDumper.Dump(res);
             Console.WriteLine(dump);
 
-            
-
-           
-
-
-
         }
-
+        
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 

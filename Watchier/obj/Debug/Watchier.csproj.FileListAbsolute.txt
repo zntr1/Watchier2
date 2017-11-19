@@ -52,7 +52,6 @@ C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\b
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.exe
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.pdb
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.csprojResolveAssemblyReference.cache
-C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.Form1.resources
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.listWindow.resources
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.LoginForm.resources
 C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.Properties.Resources.resources
@@ -81,3 +80,4 @@ C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\De
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\TMDbLib.dll
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\Newtonsoft.Json.xml
 C:\Users\secto\Documents\VS 2017\Projects\Neuer Ordner\Watchier2\Watchier\bin\Debug\TMDbLib.pdb
+C:\Users\p.pradzinski\Documents\Visual Studio 2015\Projects\Watchier2\Watchier\obj\Debug\Watchier.Form1.resources
